@@ -59,10 +59,9 @@ struct Intrinsics {
   #define ARCH_MSB
   Intrinsics::Endian Intrinsics::endian() { return Intrinsics::Endian::MSB; }
 #else
-  #warning "unable to detect endian"
-  #define ENDIAN_UNKNOWN
-  #define ARCH_UNKNOWN
-  Intrinsics::Endian Intrinsics::endian() { return Intrinsics::Endian::Unknown; }
+  #define ENDIAN_LSB
+  #define ARCH_LSB
+  Intrinsics::Endian Intrinsics::endian() { return Intrinsics::Endian::LSB; }
 #endif
 
 }
