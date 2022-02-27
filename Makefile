@@ -12,10 +12,13 @@ target  := ethos
 
 # compiler
 flags   += -I. -O3 -fomit-frame-pointer
+flags		+= -D_XOPEN_SOURCE_EXTENDED
 #flags   += -I. -ggdb -O0
 link    += -lncursesw
 link += -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,-s
 objects := libco
+LDFLAGS+= -lncursesw
+link += -D_XOPEN_SOURCE_EXTENDED
 
 # profile-guided optimization mode
 # pgo := instrument
@@ -30,7 +33,7 @@ endif
 
 # platform
 ifeq ($(platform),x)
-  flags += -march=native
+  # flags += -march=native
   link += #-Wl,-export-dynamic -ldl -lX11 -lXext
 else ifeq ($(platform),osx)
   flags += -march=native

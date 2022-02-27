@@ -1,3 +1,5 @@
+LDFLAGS+= -lncursesw
+
 ifeq ($(platform),osx)
   rubyflags = $(objcppflags) $(flags)
 else

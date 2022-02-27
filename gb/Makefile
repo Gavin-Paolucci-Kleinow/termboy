@@ -4,6 +4,8 @@ gb_objects += gb-cpu gb-ppu gb-apu
 gb_objects += gb-cheat gb-video
 objects += $(gb_objects)
 
+LDFLAGS+= -lncursesw
+
 obj/gb-interface.o: $(gb)/interface/interface.cpp $(call rwildcard,$(gb)/interface/)
 obj/gb-system.o:    $(gb)/system/system.cpp $(call rwildcard,$(gb)/system/)
 obj/gb-scheduler.o: $(gb)/scheduler/scheduler.cpp $(call rwildcard,$(gb)/scheduler/)

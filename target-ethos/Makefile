@@ -1,3 +1,5 @@
+LDFLAGS+= -lncursesw
+
 name := termboy
 
 processors := arm gsu hg51b lr35902 r6502 r65816 spc700 upd96050
@@ -28,6 +30,8 @@ endif
 # ruby
 include ruby/Makefile
 link += $(rubylink)
+link += -lncursesw
+link += -D_XOPEN_SOURCE_EXTENDED
 
 # rules
 objects := $(ui_objects) $(objects)

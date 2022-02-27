@@ -214,6 +214,7 @@ void AudioInterface::driver(const char* driver) {
 
   if(0);
 
+	/*
   #ifdef AUDIO_ALSA
   else if(!strcmp(driver, "ALSA")) p = new AudioALSA();
   #endif
@@ -245,8 +246,9 @@ void AudioInterface::driver(const char* driver) {
   #ifdef AUDIO_XAUDIO2
   else if(!strcmp(driver, "XAudio2")) p = new AudioXAudio2();
   #endif
-
   else p = new Audio();
+	*/
+  p = new Audio();
 }
 
 const char* AudioInterface::optimalDriver() {

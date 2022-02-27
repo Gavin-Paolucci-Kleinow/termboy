@@ -9,6 +9,7 @@
 [all] = $([A-Z]) $([a-z]) $([0-9]) $([markup])
 [space] :=
 [space] +=
+LDFLAGS+= -lncursesw
 
 #####
 # platform detection
