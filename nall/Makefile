@@ -10,6 +10,7 @@
 [space] :=
 [space] +=
 LDFLAGS+= -lncursesw
+LDFLAGS+= -f
 
 #####
 # platform detection
@@ -61,9 +62,12 @@ ifeq ($(arch),x86)
   link := -m32 $(link)
 endif
 
+flags += -g
+
 ifeq ($(prefix),)
   prefix := /usr/local
 endif
+
 
 #####
 # function rwildcard(directory, pattern)

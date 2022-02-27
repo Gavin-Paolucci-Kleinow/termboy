@@ -1,4 +1,5 @@
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
 
 ifeq ($(platform),osx)
   rubyflags = $(objcppflags) $(flags)
@@ -19,7 +20,7 @@ rubylink =
 #rubylink += $(if $(findstring video.wgl,$(ruby)),-lopengl32)
 #rubylink += $(if $(findstring video.xv,$(ruby)),-lXv)
 
-rubylink += $(if $(findstring audio.alsa,$(ruby)),-lasound)
+#rubylink += $(if $(findstring audio.alsa,$(ruby)),-lasound)
 #rubylink += $(if $(findstring audio.ao,$(ruby)),-lao)
 #rubylink += $(if $(findstring audio.directsound,$(ruby)),-ldsound)
 #rubylink += $(if $(findstring audio.pulseaudio,$(ruby)),-lpulse)

@@ -5,6 +5,7 @@ gb_objects += gb-cheat gb-video
 objects += $(gb_objects)
 
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
 
 obj/gb-interface.o: $(gb)/interface/interface.cpp $(call rwildcard,$(gb)/interface/)
 obj/gb-system.o:    $(gb)/system/system.cpp $(call rwildcard,$(gb)/system/)

@@ -1,4 +1,5 @@
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
 
 processor := processor
 processor_objects := $(if $(findstring lr35902,$(processors)),processor-lr35902)

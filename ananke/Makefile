@@ -2,6 +2,7 @@ ananke_objects := ananke
 objects += $(ananke_objects)
 
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
 
 obj/ananke.o: $(ananke)/ananke.cpp $(call rwildcard,$(ananke)/)
 

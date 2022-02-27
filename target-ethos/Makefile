@@ -1,4 +1,6 @@
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
+link += -g
 
 name := termboy
 
@@ -60,12 +62,12 @@ ifeq ($(platform),x)
 endif
 
 install:
-	sudo install -D -m 755 $(name) /usr/bin/$(name)
-	sudo install -D -m 755 out/$(name)-bin /usr/share/$(name)/$(name)-bin
-	sudo install -D -m 644 profile/boot.rom /usr/share/$(name)/boot.rom
-	sudo install -D -m 644 profile/manifest.bml /usr/share/$(name)/manifest.bml
-	sudo install -D -m 644 font.psfu.gz /usr/share/$(name)/font.psfu.gz
+	install -D -m 755 $(name) $PREFIX/usr/bin/$(name)
+	install -D -m 755 out/$(name)-bin $PREFIX/usr/share/$(name)/$(name)-bin
+	install -D -m 644 profile/boot.rom $PREFIX/usr/share/$(name)/boot.rom
+	install -D -m 644 profile/manifest.bml $PREFIX/usr/share/$(name)/manifest.bml
+	install -D -m 644 font.psfu.gz $PREFIX/usr/share/$(name)/font.psfu.gz
 
 uninstall:
-	sudo rm /usr/bin/$(name)
-	sudo rm -r /usr/share/$(name)/
+	rm $PREFIX/usr/bin/$(name)
+	rm -r $PREFIX/usr/share/$(name)/

@@ -13,12 +13,15 @@ target  := ethos
 # compiler
 flags   += -I. -O3 -fomit-frame-pointer
 flags		+= -D_XOPEN_SOURCE_EXTENDED
+flags		+= -g
 #flags   += -I. -ggdb -O0
 link    += -lncursesw
-link += -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl,-s
+link += -fdata-sections -ffunction-sections -Wl,--gc-sections -Wl
 objects := libco
 LDFLAGS+= -lncursesw
+LDFLAGS+= -g
 link += -D_XOPEN_SOURCE_EXTENDED
+link += -g
 
 # profile-guided optimization mode
 # pgo := instrument
